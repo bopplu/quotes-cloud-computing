@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: 'quotes-cloud-computing',
+  publicPath: '/quotes-cloud-computing',
 }
