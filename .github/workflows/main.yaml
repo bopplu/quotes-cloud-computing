@@ -33,6 +33,6 @@ jobs:
       - name: upload
         uses: google-github-actions/upload-cloud-storage@main
         with:
-          path: ./dist/*
+          path: ./dist
           destination: ${{ secrets.GCP_BUCKET_NAME }}
           credentials: ${{ secrets.GCP_SA_KEY }}
