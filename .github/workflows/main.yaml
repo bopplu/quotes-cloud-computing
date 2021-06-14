@@ -31,7 +31,6 @@ jobs:
           npm install
           npm run build
       - name: upload
-        uses: ./
         with:
           path: ./
           destination: ${{ secrets.GCP_BUCKET_NAME }}
