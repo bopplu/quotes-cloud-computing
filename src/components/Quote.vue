@@ -1,5 +1,10 @@
 <template>
-  <span class="text-nord5 text-5xl m-auto">{{ quote }}</span>
+  <div class="container flex flex-col items-end m-auto">
+    <span class="self-center px-4 text-5xl leading-normal text-nord5">{{
+      quote
+    }}</span>
+    <span class="pt-8 text-4xl text-nord5">&#x2015; {{ author }}</span>
+  </div>
 </template>
 
 <script lang="ts">
@@ -10,8 +15,11 @@ export default defineComponent({
   name: 'Quote',
   async setup() {
     const { getQuote } = useQuote()
-    const quote = await getQuote()
-    return { quote }
+    const quoteRaw = await getQuote()
+    const quoteSplit = quoteRaw.split('"')
+    const author = quoteSplit[quoteSplit.length - 1].trim()
+    const quote = quoteSplit[1]
+    return { quote, author }
   },
 })
 </script>
