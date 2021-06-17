@@ -1,6 +1,6 @@
 export default function useQuote() {
   const getQuote = async () => {
-    const data = await fetch('https://flockcomp.com/quotes/random', {
+    const data = await fetch('https://flockcomp.com/api/quotes/random', {
       method: 'GET',
     })
     const { text }: { index: string; text: string } = await data.json()
