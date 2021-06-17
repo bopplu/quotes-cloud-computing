@@ -1,3 +1,1 @@
-module.exports = {
-  publicPath: '/quotes-cloud-computing',
-}
+module.exports = {}
